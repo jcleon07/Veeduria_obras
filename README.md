@@ -1,2 +1,2 @@
-# Proyecto_Ingesoft_II
-Repositorio destinado a el proyecto desarrollado en la materia Ingenieria de Software II
+# Web Veduria de Obras
+Repositorio destinado a el proyecto de Veeduria de obras en la ciudad de Bogota
