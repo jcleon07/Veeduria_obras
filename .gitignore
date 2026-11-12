@@ -1,0 +1,71 @@
+# =====================================================
+# Construction Works Oversight Website - .gitignore
+# =====================================================
+
+# ---------- Environment variables and secrets ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Python / Django (backend) ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+venv/
+.venv/
+env/
+ENV/
+pip-log.txt
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+db.sqlite3
+db.sqlite3-journal
+
+# Django: files uploaded by users and collected static files
+backend/media/
+backend/staticfiles/
+media/
+staticfiles/
+
+# Logs
+*.log
+logs/
+
+# ---------- Node / React / Vite (frontend) ----------
+node_modules/
+frontend/dist/
+frontend/build/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# ---------- Docker ----------
+# Local data folders, if bind mounts are used instead of named volumes
+mysql_data/
+docker-data/
+docker-compose.override.yml
+
+# ---------- Editors and IDEs ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ---------- Operating system ----------
+.DS_Store
+Thumbs.db
+desktop.ini
