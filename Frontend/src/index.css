@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Space Mono:Regular";
+  src: url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap') format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@layer base {
+  body {
+    min-width: 320px;
+    background: #ffffff;
+  }
+}
+
+@layer components {
+  .search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 1248px;
+    height: 96px;
+    align-items: center;
+    gap: 32px;
+    border: 1.5px solid rgb(105 134 150 / 65%);
+    border-radius: 20px;
+    background: #ffffff;
+    padding: 0 32px;
+    box-shadow: 0 3px 12px rgb(36 60 76 / 8%);
+  }
+}
+
+@media (max-width: 639px) {
+  @layer components {
+    .search-bar {
+      height: 72px;
+      gap: 20px;
+      padding: 0 20px;
+      border-radius: 16px;
+    }
+  }
+}
