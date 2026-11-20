@@ -1,0 +1,16 @@
+# Web framework and REST API
+Django~=5.2.0
+djangorestframework~=3.16.0
+django-filter~=25.1
+
+# MySQL connector (needs the MySQL/MariaDB client libraries, installed in the Dockerfile)
+mysqlclient~=2.2.7
+
+# Images (profile photos and construction site images: ImageField)
+Pillow~=11.2
+
+# WSGI server for production
+gunicorn~=23.0
+
+# Static files (Django admin and DRF browsable API) served by Django with DEBUG=False
+whitenoise~=6.9

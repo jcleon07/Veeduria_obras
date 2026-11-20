@@ -31,8 +31,8 @@ db.sqlite3
 db.sqlite3-journal
 
 # Django: files uploaded by users and collected static files
-backend/media/
-backend/staticfiles/
+Backend/media/
+Backend/staticfiles/
 media/
 staticfiles/
 

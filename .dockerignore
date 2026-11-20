@@ -1,0 +1,8 @@
+.git/
+.env
+Workshops/
+Backend/
+**/node_modules/
+**/dist/
+**/__pycache__/
+*.md
