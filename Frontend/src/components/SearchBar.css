@@ -4,12 +4,13 @@
 @theme {
   --font-space-mono: "Space Mono", sans-serif; 
 }
+
 /* Custom styles for the search bar component */
 @layer components {
   .search-bar {
     display: flex;
-    width: 100%;
-    max-width: 1248px;
+    width: auto;
+    max-width: full;
     height: 80px;
     align-items: center;
     gap: 32px;
