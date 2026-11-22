@@ -12,17 +12,17 @@ export default function SearchBar() {
 
   return (
       <form className="search-bar" role="search" aria-label="Buscar obras" onSubmit={handleSubmit}>
-        <img className="size-8 shrink-0" src={`${assetPathPrefix}/Search_icon.svg`} alt="" />
+        <img className="size-7 shrink-0" src={`${assetPathPrefix}/Search_icon.svg`} alt="" />
         <label className="sr-only" htmlFor="artwork-search">
         </label>
         <input
           id="artwork-search"
-          className="min-w-0 flex-1 bg-transparentxs font-space-mono text-[19px] leading-8 text-[#243c4c] outline-none placeholder:text-[#243c4c]"
+          className="min-w-0 flex-1 bg-transparentxs font-space-mono text-[17px] leading-8 text-[#000000] outline-none placeholder:text-[#000000]"
           type="search"
           placeholder="Buscar obras"
         />
         <IconButton aria-label="delete" size="small">
-          <TuneIcon fontSize="large" sx={{ color: "#243C4C" }}/>
+          <TuneIcon fontSize="small" sx={{ color: "#000000", fontSize: "26px" }}/>
         </IconButton>
       </form>
   );

@@ -4,7 +4,7 @@ import "./LeafMap.css";
 
 export default function MainPage() {
     return (
-        <main className="absolute top-22 bottom-5 right-5 left-5 md:top-30 md:bottom-5 md:right-5 md:left-31">
+        <div className="h-full w-full overflow-hidden">
             <div className="map-container" role="region" aria-label="Mapa de las obras">
                 <MapContainer
                     className="h-full w-full"
@@ -18,7 +18,6 @@ export default function MainPage() {
                     />
                 </MapContainer>
             </div>
-        </main>
-
+        </div>
     );
 }

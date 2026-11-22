@@ -4,10 +4,3 @@
 @theme {
   --font-space-mono: "Space Mono", sans-serif; 
 }
-
-@layer base {
-  body {
-    min-width: 320px;
-    background: #ffffff;
-  }
-}
