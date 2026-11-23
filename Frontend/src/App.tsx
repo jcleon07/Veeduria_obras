@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import Identify from "./pages/recover/Identify";
 import VerifyCode from "./pages/recover/VerifyCode";
 import NewPassword from "./pages/recover/NewPassword";
+import NotFound from "./pages/NotFound";
 import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from "react-router-dom";
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="recover/verify-code" element={<VerifyCode />} />
           <Route path="recover/new-password" element={<NewPassword />} />
         </Route>
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={<NotFound />} />
       </Route>
 
     )
