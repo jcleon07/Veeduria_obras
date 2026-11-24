@@ -1,5 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import { ArrowBackIosIcon } from "../../components/Icons";
+import TextBox from "../../components/TextBox";
+import Buttons from "../../components/Buttons";
 
 export default function Identify() {
     const navigate = useNavigate();
@@ -13,28 +15,21 @@ export default function Identify() {
                         Atras
                     </button>
                 </div>
-                <div className="flex flex-col items-center justify-center mt-10">
-                    <h1 className="font-space-mono text-[18px] font-bold">
-                        Recuperar tu cuenta
-                    </h1>
-                    <h2 className="ml-3 text black font-space-mono text-[15px] mt-4 w-100 text-start">
-                        Ingrese su correo electrónico para recuperar tu cuenta
-                    </h2>
-                </div>
-                <div className="flex flex-col mt-4">
-                    <form className="flex flex-col items-center w-full">
-                        <input
-                            type="email"
-                            placeholder="Ingrese su correo electrónico"
-                            className="mb-4 p-2 border border-gray-300 rounded-xl w-100 placeholder:text-gray-400 placeholder:font-space-mono placeholder:text-[15px] font-space-mono text-[15px]"
-                        />
-                    </form>
-                </div>
-                <div className="flex flex-row justify-center items-center mt-2">
-                    <button className="cursor-pointer w-45 bg-[#000000] text-white font-space-mono text-[15px] py-2 px-4 rounded-xl hover:bg-gray-700"
-                            onClick={() => navigate('/recover/verify-code')}>
-                        Recuperar cuenta
-                    </button>
+                <div className="flex flex-col mt-20 gap-4">
+                    <div className="flex flex-col items-center justify-center">
+                        <h1 className="font-space-mono text-[18px] font-bold gap-1">
+                            Recupera tu cuenta
+                        </h1>
+                        <h2 className="ml-3 text black font-space-mono text-[15px] w-100 text-start">
+                            Ingrese su correo electrónico para enviarle un código de verificación.
+                        </h2>
+                    </div>
+                    <div className="mx-auto flex w-1/2 items-center justify-center">
+                        <TextBox placeholder="Ingrese su correo electrónico" type="email" maxLength={40} />
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <Buttons text="Enviar código" onClick={() => navigate('/recover/verify-code')} size='45' />
+                    </div>
                 </div>
             </div>
         </main>

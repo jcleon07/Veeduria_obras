@@ -2,8 +2,7 @@ import { type SubmitEvent } from "react";
 import "./SearchBar.css"
 import IconButton from '@mui/material/IconButton';
 import TuneIcon from '@mui/icons-material/Tune';
-
-const assetPathPrefix = "src/assets";
+import searchIcon from "../assets/Search_icon.svg";
 
 export default function SearchBar() {
   const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
@@ -12,7 +11,7 @@ export default function SearchBar() {
 
   return (
       <form className="search-bar" role="search" aria-label="Buscar obras" onSubmit={handleSubmit}>
-        <img className="size-7 shrink-0" src={`${assetPathPrefix}/Search_icon.svg`} alt="" />
+        <img className="size-7 shrink-0" src={searchIcon} alt="" />
         <label className="sr-only" htmlFor="artwork-search">
         </label>
         <input

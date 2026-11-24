@@ -1,5 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import { ArrowBackIosIcon } from "../../components/Icons";
+import TextBox from "../../components/TextBox";
+import Buttons from "../../components/Buttons";
 
 export default function NewPassword() {
     const navigate = useNavigate();
@@ -21,27 +23,12 @@ export default function NewPassword() {
                         Ingrese la nueva contraseña que desea establecer para su cuenta
                     </h2>
                 </div>
-                <div className="flex flex-col mt-4">
-                    <form className="flex flex-col items-center w-full">
-                        <input
-                            type="password"
-                            placeholder="Ingrese su nueva contraseña"
-                            className="mb-4 p-2 border border-gray-300 rounded-xl w-100 placeholder:text-gray-400 placeholder:font-space-mono placeholder:text-[15px] font-space-mono text-[15px]"
-                        />
-                    </form>
-                    <form className="flex flex-col items-center w-full">
-                        <input
-                            type="confirm-password"
-                            placeholder="Confirme su nueva contraseña"
-                            className="mb-4 p-2 border border-gray-300 rounded-xl w-100 placeholder:text-gray-400 placeholder:font-space-mono placeholder:text-[15px] font-space-mono text-[15px]"
-                        />
-                    </form>
+                <div className="flex flex-col mt-4 gap-4 w-1/2 mx-auto">
+                    <TextBox placeholder="Ingrese su nueva contraseña" type="password" maxLength={40} />
+                    <TextBox placeholder="Confirme su nueva contraseña" type="password" maxLength={40} />
                 </div>
-                <div className="flex flex-row justify-center items-center mt-2">
-                    <button className="cursor-pointer w-70 bg-[#000000] text-white font-space-mono text-[15px] py-2 px-4 rounded-xl hover:bg-gray-700"
-                            onClick={() => navigate('/login')}>
-                        Actualizar contraseña
-                    </button>
+                <div className="flex flex-row justify-center items-center mt-4">
+                    <Buttons text="Cambiar contraseña" onClick={() => navigate('/login')} size='55' />
                 </div>
             </div>
         </main>

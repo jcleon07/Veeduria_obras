@@ -7,8 +7,44 @@ import { MenuIcon,
     NotificationsIcon,
     SettingsIcon,
     HelpIcon,
-    LoginIcon  } from './Icons';
-import { useNavigate } from 'react-router-dom';
+    LoginIcon,  
+    HomeIcon} from './Icons';
+import { useNavigate, NavLink } from 'react-router-dom';
+import type { ReactNode } from 'react';
+import logo from '../assets/logo.svg';
+
+type SideBarProps = {
+    route?: string;
+    icon: ReactNode;
+    name: string;
+};
+
+const SideBarItems: SideBarProps[] = [
+    {
+        route: '/',
+        icon: <HomeIcon sx={{ color: "#000000", fontSize: "26px" }} />,
+        name: 'Inicio',
+    },
+    {
+        route: '/profile',
+        icon: <AccountCircleIcon sx={{ color: "#000000", fontSize: "26px" }} />,
+        name: 'Mi cuenta',
+    },
+    {
+        route: '/saved-works',
+        icon: <BookmarkBorderIcon sx={{ color: "#000000", fontSize: "26px" }} />,
+        name: 'Obras Guardadas',
+    },
+    {
+        route: '/petitions',
+        icon: <LibraryBooksIcon sx={{ color: "#000000", fontSize: "26px" }} />,
+        name: 'Mis peticiones',
+    },
+    {
+        route: '/notifications',
+        icon: <NotificationsIcon sx={{ color: "#000000", fontSize: "26px" }} />,
+        name: 'Notificaciones',
+    }]
 
 function SideBar({expanded, setExpanded}:any ){
     const navigate = useNavigate();
@@ -17,136 +53,49 @@ function SideBar({expanded, setExpanded}:any ){
             <div className="flex items-center justify-between p-2 pb-2 cursor-pointer"
             onClick={() => navigate('/')}>
                 <img className="h-16 w-16 md:h-16 md:w-16" 
-                src="src/assets/logo.svg" 
+                src={logo} 
                 alt="Logo"/>
                 <p className={`p-2 text-black font-space-mono font-bold text-[15px] ${expanded ? 'block' : 'hidden'}`}>
                     Veeduría Distrital
                 </p>
             </div>
-            <ul className={`flex flex-col ${expanded ? 'items-start' : 'items-center'} justify-start gap-2 p-2`}>
-                <div>
+                <ul className={`flex flex-col ${expanded ? 'items-start' : 'items-center'} justify-start gap-2 p-2`}>
+                <div className={`flex flex-col ${expanded ? 'items-start' : 'items-center'} justify-start gap-2 p-2`}>
                 <li className={`${expanded ? 'p-1' : 'p-0'}`}>
                     <IconButton onClick={() => setExpanded((value: boolean) => !value)}>
                         <MenuIcon sx={{ color: "#000000", fontSize: "26px" }} />
                     </IconButton>
                 </li>
-                <li>
+                {SideBarItems.map((item) => (
+                <li key={item.route}>
                     {expanded ?
-                    <button
-                        type="button"
-                        onClick={() => navigate('/profile')}
-                        className={`
-                        h-10 flex items-center gap-3 rounded-2xl
-                        transition-all duration-200
-                        hover:bg-gray-100
-                        w-45 
-                        justify-start 
-                        px-3
-                        cursor-pointer
-                        `}
-                    >
-                        <AccountCircleIcon sx={{ color: "#000000", fontSize: "26px" }} />
-
-                        {expanded && (
-                        <span className="whitespace-nowrap font-space-mono text-[13px]">
-                            Mi cuenta
-                        </span>
-                        )}
-                    </button>
+                    <NavLink
+                        to={item.route || ''}
+                        className={({ isActive }) =>
+                            `h-10 flex items-center gap-3 rounded-2xl w-45 px-3 transition-all duration-200 ${
+                            isActive ? "bg-gray-200" : "hover:bg-gray-100"
+                            }`
+                        }
+                        >
+                        {item.icon}
+                        <span className="whitespace-nowrap font-space-mono text-[13px]">{item.name}</span>
+                    </NavLink>
                     :
-                    <IconButton onClick={() => navigate('/profile')}>
-                        <AccountCircleIcon sx={{ color: "#000000", fontSize: "26px" }} />
+                    <IconButton
+                        component={NavLink}
+                        to={item.route || ''}
+                        aria-label={item.name}
+                        sx={{
+                            "&.active": {
+                            backgroundColor: "#e5e7eb",
+                            },
+                        }}>
+                        {item.icon}
                     </IconButton>
                     }
                 </li>
-                <li>
-                    {expanded ?
-                    <button
-                        type="button"
-                        onClick={() => navigate('/saved-works')}
-                        className={`
-                        h-10 flex items-center gap-3 rounded-2xl
-                        transition-all duration-200
-                        hover:bg-gray-100
-                        w-45 
-                        justify-start 
-                        px-3
-                        cursor-pointer
-                        `}
-                    >
-                        <BookmarkBorderIcon sx={{ color: "#000000", fontSize: "26px" }} />
-
-                        {expanded && (
-                        <span className="whitespace-nowrap font-space-mono text-[13px]">
-                            Obras guardadas
-                        </span>
-                        )}
-                    </button>
-                    :
-                    <IconButton onClick={() => navigate('/saved-works')}>
-                        <BookmarkBorderIcon sx={{ color: "#000000", fontSize: "26px" }} />
-                    </IconButton>
-                    }
-                </li>
-                <li>
-                    {expanded ?
-                    <button
-                        type="button"
-                        onClick={() => navigate('/petitions')}
-                        className={`
-                        h-10 flex items-center gap-3 rounded-2xl
-                        transition-all duration-200
-                        hover:bg-gray-100
-                        w-45 
-                        justify-start 
-                        px-3
-                        cursor-pointer
-                        `}
-                    >
-                        <LibraryBooksIcon sx={{ color: "#000000", fontSize: "26px" }} />
-
-                        {expanded && (
-                        <span className="whitespace-nowrap font-space-mono text-[13px]">
-                            Mis peticiones
-                        </span>
-                        )}
-                    </button>
-                    :
-                    <IconButton onClick={() => navigate('/petitions')}>
-                        <LibraryBooksIcon sx={{ color: "#000000", fontSize: "26px" }} />
-                    </IconButton>
-                    }
-                </li>
-                <li>
-                    {expanded ?
-                    <button
-                        type="button"
-                        onClick={() => null}
-                        className={`
-                        h-10 flex items-center gap-3 rounded-2xl
-                        transition-all duration-200
-                        hover:bg-gray-100
-                        w-45 
-                        justify-start 
-                        px-3
-                        cursor-pointer
-                        `}
-                    >
-                        <NotificationsIcon sx={{ color: "#000000", fontSize: "26px" }} />
-
-                        {expanded && (
-                        <span className="whitespace-nowrap font-space-mono text-[13px]">
-                            Notificaciones
-                        </span>
-                        )}
-                    </button>
-                    :
-                    <IconButton onClick={() => null}>
-                        <NotificationsIcon sx={{ color: "#000000", fontSize: "26px" }} />
-                    </IconButton>
-                    }
-                </li>
-                </div>
+                ))}
+            </div>
             </ul>
             <div className="flex-grow"/>
             <ul className={`flex flex-col ${expanded ? 'items-start' : 'items-center'} justify-end gap-2 p-2`}>

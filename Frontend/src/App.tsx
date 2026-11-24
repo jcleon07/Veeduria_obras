@@ -10,19 +10,20 @@ import Identify from "./pages/recover/Identify";
 import VerifyCode from "./pages/recover/VerifyCode";
 import NewPassword from "./pages/recover/NewPassword";
 import NotFound from "./pages/NotFound";
+import RouteError from "./pages/RouteError";
 import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from "react-router-dom";
 
 export default function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route>
+      <Route errorElement={<RouteError />}>
         <Route path="/" element={<MainLayout />}>
         <Route index element={<MainPage />} />
           <Route path="profile" element={<Profile />} />
           <Route path="petitions" element={<Petitions />} />
           <Route path="saved-works" element={<SavedWorks />} />
         </Route>
-          <Route path="/" element={<AuthLayout />}>
+        <Route path="/" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="recover/identify" element={<Identify />} />

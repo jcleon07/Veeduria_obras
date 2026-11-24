@@ -1,6 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import { ArrowBackIosIcon } from "../../components/Icons";
 import { type ChangeEvent, type ClipboardEvent, useRef, useState } from "react";
+import Buttons from "../../components/Buttons";
 
 export default function VerifyCode() {
     const navigate = useNavigate();
@@ -85,10 +86,7 @@ export default function VerifyCode() {
                     </form>
                 </div>
                 <div className="flex flex-row justify-center items-center mt-2">
-                    <button className="cursor-pointer w-45 bg-[#000000] text-white font-space-mono text-[15px] py-2 px-4 rounded-xl hover:bg-gray-700"
-                            onClick={() => navigate('/recover/new-password')}>
-                        Verificar código
-                    </button>
+                    <Buttons text="Verificar código" onClick={() => navigate('/recover/new-password')} size='45' />
                 </div>
             </div>
         </main>

@@ -8,6 +8,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import LoginIcon from '@mui/icons-material/Login';
+import HomeIcon from '@mui/icons-material/Home';
 export {
     MenuIcon,
     AccountCircleIcon,
@@ -18,5 +19,6 @@ export {
     HelpIcon,
     LogoutIcon,
     ArrowBackIosIcon,
-    LoginIcon
+    LoginIcon,
+    HomeIcon
 };

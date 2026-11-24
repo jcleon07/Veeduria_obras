@@ -1,13 +1,14 @@
 import {useNavigate} from "react-router-dom";
+import olruggioImage from "../assets/olruggio.jpg";
 
-export default function Identify() {
+export default function NotFound() {
     const navigate = useNavigate();
 
     return (
         <main className="flex justify-center items-center h-screen w-full overflow-hidden">
             <div className="flex justify-start items-center flex-col flex-1">
                 <div className="flex flex-col items-center justify-center mt-10">
-                    <img src="src/assets/olruggio.jpg" alt="coco" className="w-40 h-40" />
+                    <img src={olruggioImage} alt="Olruggio" className="w-40 h-40" />
                     <h1 className="font-space-mono text-[18px] font-bold mt-4">
                         Error 404: Página no encontrada
                     </h1>
