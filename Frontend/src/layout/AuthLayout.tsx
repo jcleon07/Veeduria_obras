@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import IconButton from '@mui/material/IconButton';
-import { HelpIcon, SettingsIcon } from "../components/Icons";
+import { HelpIcon, SettingsIcon } from "../utils/Icons";
 
 export default function MainLayout() {
 

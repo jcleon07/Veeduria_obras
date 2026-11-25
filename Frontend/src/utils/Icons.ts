@@ -9,6 +9,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import LoginIcon from '@mui/icons-material/Login';
 import HomeIcon from '@mui/icons-material/Home';
+import FileUploadIcon from '@mui/icons-material/FileUpload';
 export {
     MenuIcon,
     AccountCircleIcon,
@@ -20,5 +21,6 @@ export {
     LogoutIcon,
     ArrowBackIosIcon,
     LoginIcon,
-    HomeIcon
+    HomeIcon,
+    FileUploadIcon
 };

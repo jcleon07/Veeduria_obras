@@ -8,7 +8,7 @@ import { MenuIcon,
     SettingsIcon,
     HelpIcon,
     LoginIcon,  
-    HomeIcon} from './Icons';
+    HomeIcon} from '../utils/Icons';
 import { useNavigate, NavLink } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import logo from '../assets/logo.svg';

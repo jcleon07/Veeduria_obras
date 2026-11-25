@@ -1,10 +1,14 @@
 import {useNavigate} from "react-router-dom";
-import { ArrowBackIosIcon } from "../../components/Icons";
-import TextBox from "../../components/TextBox";
+import { ArrowBackIosIcon } from "../../utils/Icons";
+import InputBox from "../../components/InputBox";
 import Buttons from "../../components/Buttons";
+import { useState } from "react";
+import {validateEmail}  from "../../utils/validate";
 
 export default function Identify() {
     const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [emailValido, setEmailValido] = useState<boolean | null>(null);
 
     return (
         <main className="flex justify-center items-center h-screen w-full overflow-hidden">
@@ -25,7 +29,10 @@ export default function Identify() {
                         </h2>
                     </div>
                     <div className="mx-auto flex w-1/2 items-center justify-center">
-                        <TextBox placeholder="Ingrese su correo electrónico" type="email" maxLength={40} />
+                        <InputBox placeholder="Ingrese su correo electrónico" label="email" type="email" maxLength={40} value={email} onChange={setEmail} 
+                        onBlur={(email) => setEmailValido(validateEmail(email))} 
+                        validate={emailValido !== false} 
+                        message="Ingresa un correo válido."/>
                     </div>
                     <div className="flex justify-center items-center">
                         <Buttons text="Enviar código" onClick={() => navigate('/recover/verify-code')} size='45' />

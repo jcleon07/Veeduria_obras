@@ -2,28 +2,44 @@ import type { HTMLInputTypeAttribute } from "react";
 
 type TextBoxProps = {
     name?: string;
-    placeholder: string;
+    label: string;
+    placeholder?: string;
     type: HTMLInputTypeAttribute;
     isDisabled?: boolean;
     maxLength?: number;
+    value: string;
+    onChange: (value: string) => void;
+    validate?: boolean;
+    onBlur?: (value: string) => void;
+    message?: string;
+    multiLine?: boolean;
 };
 
-export default function TextBox({ name, placeholder, type, isDisabled, maxLength }: TextBoxProps) {
+export default function TextBox({ 
+    name, 
+    placeholder, 
+    type, 
+    isDisabled, 
+    maxLength,
+    label,
+    value,
+    onChange,
+    validate,
+    onBlur,
+    message,}: TextBoxProps) {
     return (
         <div className="flex flex-col w-full">
             <label
-                htmlFor={name}
+                htmlFor={label}
                 className="ml-4 text-black font-space-mono text-[15px]"
             >
                 {name}
             </label>
-            <input
-                id={name}
-                type={type}
-                maxLength={maxLength}
-                placeholder={placeholder}
-                disabled={isDisabled === true}
-                className="p-2 border border-gray-300 rounded-xl placeholder:text-gray-400 placeholder:font-space-mono placeholder:text-[15px] font-space-mono text-[15px]"
+            <textarea
+            rows={4}
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            style={{ resize: 'none' }}
             />
         </div>
     );
