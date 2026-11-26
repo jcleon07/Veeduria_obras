@@ -32,7 +32,7 @@ export default function Profile() {
         <main className="h-full w-full p-6 box-border">
             <div className="flex h-full w-full gap-4 overflow-hidden">
                 <div className="flex min-w-0 flex-[2] flex-col">
-                    <div className="flex h-full flex-col border border-box border-gray-300 p-4 rounded-xl gap-1">
+                    <div className="flex h-full flex-col border-2 border-box border-gray-500 p-4 rounded-xl gap-1">
                         <div className="flex flex-row items-center gap-8 p-2">
                             <ButtonBase
                             component="label"
@@ -114,7 +114,7 @@ export default function Profile() {
                     </div>
                 </div>
                 <div className="flex min-w-0 flex-[2] flex-col gap-4">
-                    <div className="h-1/2 border border-box border-gray-300 overflow-hidden rounded-xl">
+                    <div className="h-1/2 border-2 border-box border-gray-500 overflow-hidden rounded-xl">
                     <ListPetitions
                         name="Obras"
                         description="Tus obras guardadas."
@@ -123,10 +123,10 @@ export default function Profile() {
                         icon={<BookmarkBorderIcon sx={{ color: "#ffffff", fontSize: "26px" }} />}
                     />
                     </div>
-                    <div className="h-1/2 border border-box border-gray-300 overflow-hidden rounded-xl">
+                    <div className="h-1/2 border-2 border-box border-gray-500 overflow-hidden rounded-xl">
                     <ListPetitions
-                        name="Peticiones"
-                        description="Tus peticiones más recientes."
+                        name="Actividad"
+                        description="Mi actividad reciente."
                         values={[0, 1, 2, 3, 4, 5, 6]}
                         onClick={(value) => navigate(`/petition/${value}`)}
                         icon={<LibraryBooksIcon sx={{ color: "#ffffff", fontSize: "26px" }} />}

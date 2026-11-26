@@ -16,7 +16,7 @@ export default function SearchBar() {
         </label>
         <input
           id="artwork-search"
-          className="min-w-0 flex-1 bg-transparentxs font-space-mono text-[17px] leading-8 text-[#000000] outline-none placeholder:text-[#000000]"
+          className="min-w-0 flex-1 bg-transparentxs font-space-mono text-[16px] leading-8 text-[#000000] outline-none placeholder:text-[#000000]"
           type="search"
           placeholder="Buscar obras"
         />

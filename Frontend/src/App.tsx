@@ -1,7 +1,7 @@
 import MainPage from "./pages/MainPage";
 import Profile from "./pages/Profile";
 import Petitions from "./pages/Petitions";
-import SavedWorks from "./pages/SavedWorks";
+import Works from "./pages/Works";
 import MainLayout from "./layout/MainLayout";
 import AuthLayout from "./layout/AuthLayout";
 import Login from "./pages/Login";
@@ -12,6 +12,7 @@ import NewPassword from "./pages/recover/NewPassword";
 import NotFound from "./pages/NotFound";
 import RouteError from "./pages/RouteError";
 import {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from "react-router-dom";
+import SingleWork from "./pages/SingleWork";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -21,7 +22,8 @@ export default function App() {
         <Route index element={<MainPage />} />
           <Route path="profile" element={<Profile />} />
           <Route path="petitions" element={<Petitions />} />
-          <Route path="saved-works" element={<SavedWorks />} />
+          <Route path="works" element={<Works />} />
+          <Route path="works/:id" element={<SingleWork />} />
         </Route>
         <Route path="/" element={<AuthLayout />}>
           <Route path="login" element={<Login />} />

@@ -10,6 +10,10 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import LoginIcon from '@mui/icons-material/Login';
 import HomeIcon from '@mui/icons-material/Home';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import StarIcon from '@mui/icons-material/Star';
+import CommentIcon from '@mui/icons-material/Comment';
+
 export {
     MenuIcon,
     AccountCircleIcon,
@@ -22,5 +26,8 @@ export {
     ArrowBackIosIcon,
     LoginIcon,
     HomeIcon,
-    FileUploadIcon
+    FileUploadIcon,
+    ArrowForwardIosIcon,
+    StarIcon,
+    CommentIcon
 };

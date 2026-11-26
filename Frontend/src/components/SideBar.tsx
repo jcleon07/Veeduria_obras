@@ -12,6 +12,7 @@ import { MenuIcon,
 import { useNavigate, NavLink } from 'react-router-dom';
 import type { ReactNode } from 'react';
 import logo from '../assets/logo.svg';
+import WorkIcon from '../assets/engineer.svg';
 
 type SideBarProps = {
     route?: string;
@@ -31,9 +32,9 @@ const SideBarItems: SideBarProps[] = [
         name: 'Mi cuenta',
     },
     {
-        route: '/saved-works',
-        icon: <BookmarkBorderIcon sx={{ color: "#000000", fontSize: "26px" }} />,
-        name: 'Obras Guardadas',
+        route: '/works',
+        icon: <img src={WorkIcon} alt="Obras" style={{ width: '26px', height: '26px' }} />,
+        name: 'Obras',
     },
     {
         route: '/petitions',

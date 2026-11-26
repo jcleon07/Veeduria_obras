@@ -16,18 +16,18 @@ type ListPetitionsProps = {
 
 export default function ListPetitions({ name, description, values, onClick, icon}: ListPetitionsProps) {
     return (
-        <main className="flex h-full flex-col overflow-hidden">
+        <main className="flex h-full min-w-0 w-full flex-col overflow-hidden">
             <div className="shrink-0 p-4 gap-2">
-                <h1 className="font-space-mono text-[18px] font-bold">
+                <h1 className="font-space-mono text-[15px] font-bold">
                     {name}
                 </h1>
-                <h2 className=" text black font-space-mono text-[15px] w-100 text-start">
+                <h2 className=" text black font-space-mono text-[14px] w-100 text-start">
                     {description}
                 </h2>
             </div>
             <Divider sx={{ borderColor: "#acb0b5" }} />
-            <div className="min-h-0 flex-1 overflow-y-auto [scrollbar-gutter:stable]">
-                <List component="nav" aria-label="main mailbox folders">
+            <div className="min-h-0 w-full flex-1 overflow-y-auto [scrollbar-gutter:stable]">
+                <List component="nav" aria-label="main mailbox folders" sx={{ width: '100%' }}>
                 {values.map((value) => (
                     <ListItemButton
                     key={value}
@@ -58,11 +58,11 @@ export default function ListPetitions({ name, description, values, onClick, icon
                     sx={{
                         '& .MuiListItemText-primary': {
                             fontFamily: 'Space Mono, monospace',
-                            fontSize: '15px',
+                            fontSize: '14px',
                         },
                         '& .MuiListItemText-secondary': {
                             fontFamily: 'Space Mono, monospace',
-                            fontSize: '13px',
+                            fontSize: '12px',
                         }
                     }}
                     />
