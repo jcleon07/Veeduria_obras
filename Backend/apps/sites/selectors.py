@@ -39,7 +39,7 @@ def list_sites(
     if responsible_entity_id:
         qs = qs.filter(responsible_entity_id=responsible_entity_id)
     if search:
-        qs = qs.filter(name__icontains=search | Q(description__icontains=search))
+        qs = qs.filter(Q(name__icontains=search) | Q(description__icontains=search))
     return qs.order_by("name")
 
 def list_sites_for_map(
@@ -57,7 +57,7 @@ def get_site(site_id: int) -> ConstructionSite:
 def get_site_detail(site_id: int) -> ConstructionSite:
     return(
         ConstructionSite.objects.select_related(
-            "locality", "contractor", "resposible_entity"
+            "locality", "contractor", "responsible_entity"
             )
             .prefetch_related(
                 Prefetch("milestones", queryset=Milestone.objects.order_by("planned_date")),
@@ -97,7 +97,7 @@ def get_latest_progress(site_id: int) -> ProgressRecord | None:
         .first()
     )
 
-def list_milestiones(site_id: int, *, completed: bool | None = None) -> QuerySet[Milestone]:
+def list_milestones(site_id: int, *, completed: bool | None = None) -> QuerySet[Milestone]:
     qs = Milestone.objects.filter(construction_site_id=site_id)
     
     if completed is True:
@@ -119,7 +119,7 @@ def active_road_closures_queryset() -> QuerySet[RoadClosure]:
 def list_active_road_closures(*, locality_id: int | None = None) -> QuerySet[RoadClosure]:
     qs = active_road_closures_queryset().select_related("construction_site")
     if locality_id:
-        qs = qs.filter(construcion_site__locality_id=locality_id)
+        qs = qs.filter(construction_site__locality_id=locality_id)
     return qs.order_by("-start_date")
 
 def list_road_closures(site_id: int) -> QuerySet[RoadClosure]:
