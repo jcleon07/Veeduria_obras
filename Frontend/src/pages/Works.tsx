@@ -104,19 +104,23 @@ export default function Works() {
         <main className="flex flex-col h-screen w-full overflow-hidden gap-2 p-6">
             <div className="flex min-h-0 flex-[2] flex-row items-center gap-4">
                 <div className="flex flex-[4] flex-col min-w-0 h-full flex-1 justify-center items-start border-box border-2 border-gray-500 rounded-2xl g-2 p-4">
-                    <h1 className="font-space-mono text-[17px] font-bold text-black">
+                    <div className="flex flex-[1]">
+                    <h1 className="h-1/3 font-space-mono text-[20px] font-bold text-black">
                         {favoritesButtonClicked ? "Mis obras preferidas" : "Obras activas" }
                     </h1>
-                    <p className="font-space-mono text-[13px] leading-relaxed text-gray-700">
+                    </div>
+                    <div className="flex flex-[2]">
+                    <p className="h-2/3 font-space-mono text-[13px] leading-relaxed text-gray-700">
                         {favoritesButtonClicked ? 
                         "Explora tus obras favoritas y mantente al tanto de su progreso."
                         :
                         "Aquí puedes encontrar todas las obras registradas en la plataforma. Explora y descubre información relevante sobre cada obra, incluyendo detalles técnicos, ubicación y estado actual." 
                         }   
                     </p>
+                    </div>
                 </div>
                 <div className="flex flex-[2] flex-row gap-3 sm:ml-auto sm:justify-end">
-                    {!favoritesButtonClicked && <Cards id={cardAgregar.id} title={cardAgregar.title} description={cardAgregar.description} onSelect={() => null} />}
+                    <Cards id={cardAgregar.id} title={cardAgregar.title} description={cardAgregar.description} onSelect={() => null} />
                     <Cards id={cardFavorite.id} title={favoritesButtonClicked ? "Volver" : cardFavorite.title } description={favoritesButtonClicked ? "Vuelve a la búsqueda de todas las obras" : cardFavorite.description } onSelect={() => setFavoritesButtonClicked((current) => !current)} />
                 </div>
             </div>

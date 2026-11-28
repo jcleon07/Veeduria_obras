@@ -9,10 +9,10 @@ export default function NotFound() {
             <div className="flex justify-start items-center flex-col flex-1">
                 <div className="flex flex-col items-center justify-center mt-10">
                     <img src={olruggioImage} alt="Olruggio" className="w-40 h-40" />
-                    <h1 className="font-space-mono text-[18px] font-bold mt-4">
+                    <h1 className="font-space-mono text-[var(--app-font-color-primary)] text-[18px] font-bold mt-4">
                         Error 404: Página no encontrada
                     </h1>
-                    <h2 className="ml-3 text black font-space-mono text-[15px] mt-4 w-100 text-start">
+                    <h2 className="ml-3 text-[var(--app-font-color-primary)] font-space-mono text-[15px] mt-4 w-100 text-start">
                         La página que está buscando no existe o ha sido movida. Verifique la URL o regrese a la página de inicio.
                     </h2>
                 </div>

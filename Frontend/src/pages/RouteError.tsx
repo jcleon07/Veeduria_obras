@@ -12,8 +12,8 @@ export default function RouteError() {
   if (isRouteErrorResponse(error)) {
     return (
       <main className="flex h-screen flex-col items-center justify-center gap-4">
-        <h1 className="font-space-mono text-[18px] font-bold mt-4">Error {error.status}</h1>
-        <p className="text black font-space-mono text-[15px]">{error.statusText}</p>
+        <h1 className="font-space-mono text-[var(--app-font-color-primary)] text-[18px] font-bold mt-4">Error {error.status}</h1>
+        <p className="text-[var(--app-font-color-primary)] font-space-mono text-[15px]">{error.statusText}</p>
 
         <Buttons text="Volver al inicio" onClick={() => navigate("/")} />
       </main>

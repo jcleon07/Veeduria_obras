@@ -1,7 +1,7 @@
 import Buttons from "../components/Buttons";
 import InputBox from "../components/InputBox";
 import { useNavigate } from "react-router-dom";
-import ListPetitions from "../components/ListPetitions";
+import SmallLists from "../components/SmallLists";
 import { BookmarkBorderIcon,
     LibraryBooksIcon,
     FileUploadIcon } from "../utils/Icons";
@@ -32,7 +32,7 @@ export default function Profile() {
         <main className="h-full w-full p-6 box-border">
             <div className="flex h-full w-full gap-4 overflow-hidden">
                 <div className="flex min-w-0 flex-[2] flex-col">
-                    <div className="flex h-full flex-col border-2 border-box border-gray-500 p-4 rounded-xl gap-1">
+                    <div className="flex h-full flex-col border-[1.5px] border-box border-[var(--app-border-color)] p-4 rounded-xl gap-1">
                         <div className="flex flex-row items-center gap-8 p-2">
                             <ButtonBase
                             component="label"
@@ -55,7 +55,7 @@ export default function Profile() {
                             <Avatar
                             alt="Foto de perfil"
                             src={avatarSrc}
-                            sx={{ width: 120, height: 120, border: '1px solid #000000' }}
+                            sx={{ width: 120, height: 120, border: '1.5px solid var(--app-border-color)' }}
                             />
                             {editing && (
                             <div className="absolute">
@@ -65,14 +65,14 @@ export default function Profile() {
                                     justifyContent: 'center',
                                     alignItems: 'center',
                                     display: 'flex',
-                                    color: 'black',
-                                    backgroundColor: 'white',
+                                    color: 'var(--app-icon-color)',
+                                    backgroundColor: 'var(--app-icon-selected-color)',
                                     borderRadius: '50%',
                                     height: 50,
                                     width: 50,
                                     p: 0.5,
                                     '&:hover': {
-                                        backgroundColor: '#b2b5bb',
+                                        backgroundColor: 'var(--app-icon-hover-color)',
                                         cursor: 'pointer',
                                     },
                                 }}
@@ -114,22 +114,22 @@ export default function Profile() {
                     </div>
                 </div>
                 <div className="flex min-w-0 flex-[2] flex-col gap-4">
-                    <div className="h-1/2 border-2 border-box border-gray-500 overflow-hidden rounded-xl">
-                    <ListPetitions
+                    <div className="h-1/2 border-[1.5px] border-box border-[var(--app-border-color)] overflow-hidden rounded-xl">
+                    <SmallLists
                         name="Obras"
                         description="Tus obras guardadas."
                         values={[0, 1, 2, 3, 4, 5, 6]}
-                        onClick={(value) => navigate(`/petition/${value}`)}
+                        onClick={(value) => navigate(`/works/${value}`)}
                         icon={<BookmarkBorderIcon sx={{ color: "#ffffff", fontSize: "26px" }} />}
                     />
                     </div>
-                    <div className="h-1/2 border-2 border-box border-gray-500 overflow-hidden rounded-xl">
-                    <ListPetitions
+                    <div className="h-1/2 border-[1.5px] border-box border-[var(--app-border-color)] overflow-hidden rounded-xl">
+                    <SmallLists
                         name="Actividad"
                         description="Mi actividad reciente."
                         values={[0, 1, 2, 3, 4, 5, 6]}
                         onClick={(value) => navigate(`/petition/${value}`)}
-                        icon={<LibraryBooksIcon sx={{ color: "#ffffff", fontSize: "26px" }} />}
+                        icon={<LibraryBooksIcon sx={{ color: "var(--app-icon-list-color)", fontSize: "26px" }} />}
                     />
                     </div>
                 </div>

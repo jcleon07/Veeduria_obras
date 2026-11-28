@@ -1,4 +1,4 @@
-import ListPetitions from "../components/ListPetitions";
+import SmallLists from "../components/SmallLists";
 import { StarIcon, CommentIcon, ArrowBackIosIcon } from "../utils/Icons";
 import { LineChart } from "@mui/x-charts/LineChart";
 import Avatar from '@mui/material/Avatar';
@@ -17,7 +17,7 @@ const cardExport =
 const cardFavorite =
     {
         id: 2,
-        title: "Favoritos",
+        title: "Seguimiento",
         description: "Agrega la obra a tu lista de favoritos",
     }
     
@@ -26,6 +26,7 @@ export default function SingleWork() {
     const navigate = useNavigate();
     const progressByMonth = [2, 5.5, 12.5, 28.5, 31.5, 55];
     const latestProgress = progressByMonth[progressByMonth.length - 1];
+    
     return (
         <main className="flex h-screen min-h-0 w-full flex-col gap-4 overflow-hidden p-6">
             <div className="flex min-h-0 flex-[2]">
@@ -145,7 +146,7 @@ export default function SingleWork() {
                 </div>
                 <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-4">
                     <div className="flex relative min-h-0 w-full flex-1 box-border border-2 border-gray-500 rounded-2xl overflow-hidden">
-                        <ListPetitions
+                        <SmallLists
                             name="Calificaciones"
                             description=""
                             values={[0, 1, 2, 3, 4, 5, 6]}
@@ -174,7 +175,7 @@ export default function SingleWork() {
                         </div>
                     </div>
                     <div className="flex relative min-h-0 min-w-0 w-full flex-1 box-border border-2 border-gray-500 rounded-2xl overflow-hidden">
-                        <ListPetitions
+                        <SmallLists
                             name="Comentarios"
                             description=""
                             values={[0, 1, 2, 3, 4, 5, 6]}

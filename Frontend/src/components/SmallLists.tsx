@@ -14,18 +14,18 @@ type ListPetitionsProps = {
     icon: ReactNode;
 };
 
-export default function ListPetitions({ name, description, values, onClick, icon}: ListPetitionsProps) {
+export default function ListProfile({ name, description, values, onClick, icon}: ListPetitionsProps) {
     return (
         <main className="flex h-full min-w-0 w-full flex-col overflow-hidden">
-            <div className="shrink-0 p-4 gap-2">
-                <h1 className="font-space-mono text-[15px] font-bold">
+            <div className="flex  flex-col shrink-0 p-4 gap-1">
+                <h1 className="font-space-mono text-[length:var(--app-font-size-third)] font-bold">
                     {name}
                 </h1>
-                <h2 className=" text black font-space-mono text-[14px] w-100 text-start">
+                <h2 className=" text black font-space-mono text-[length:var(--app-font-size-fourth)] w-100 text-start">
                     {description}
                 </h2>
             </div>
-            <Divider sx={{ borderColor: "#acb0b5" }} />
+            <Divider sx={{ borderTop: '1.5px solid var(--app-border-color)' }} />
             <div className="min-h-0 w-full flex-1 overflow-y-auto [scrollbar-gutter:stable]">
                 <List component="nav" aria-label="main mailbox folders" sx={{ width: '100%' }}>
                 {values.map((value) => (
@@ -39,7 +39,7 @@ export default function ListPetitions({ name, description, values, onClick, icon
                         gap: 2,
                         transition: '0.3s',
                         '&:hover': {
-                            backgroundColor: '#f5f5f5',
+                            backgroundColor: 'var(--app-icon-hover-color)',
                             transform: 'scale(1.02)',
                         }
                     }}
@@ -47,7 +47,7 @@ export default function ListPetitions({ name, description, values, onClick, icon
                     <ListItemIcon>
                         <Avatar
                         sx={{
-                            bgcolor: '#000000',}}
+                            bgcolor: 'var(--app-icon-color)',}}
                         >
                             {icon}
                         </Avatar>
@@ -58,11 +58,11 @@ export default function ListPetitions({ name, description, values, onClick, icon
                     sx={{
                         '& .MuiListItemText-primary': {
                             fontFamily: 'Space Mono, monospace',
-                            fontSize: '14px',
+                            fontSize: 'var(--app-font-size-third)',
                         },
                         '& .MuiListItemText-secondary': {
                             fontFamily: 'Space Mono, monospace',
-                            fontSize: '12px',
+                            fontSize: 'var(--app-font-size-fourth)',
                         }
                     }}
                     />

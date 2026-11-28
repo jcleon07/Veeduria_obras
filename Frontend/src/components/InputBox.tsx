@@ -31,7 +31,7 @@ export default function InputBox({
         <div className="flex flex-col w-full">
             <label
                 htmlFor={label}
-                className="ml-4 text-black font-space-mono text-[15px]"
+                className="ml-4 text-[var(--app-font-color-primary)] font-space-mono text-[15px]"
             >
                 {name}
             </label>
@@ -45,19 +45,20 @@ export default function InputBox({
                 onChange={(e) => onChange(e.target.value)}
                 onBlur={(e) => onBlur && onBlur(e.target.value)}
                 className={`${
-                    validate ? "border-gray-300" : "border-red-500"
+                    validate ? "border-[var(--app-input-color)]" : "border-[var(--app-input-rejected-color)]"
                 }
                     p-2 
                     border 
                     rounded-xl 
-                    placeholder:text-gray-400 
+                    placeholder:text-[var(--app-font-color-placeholder)] 
                     placeholder:font-space-mono 
                     placeholder:text-[15px] 
                     font-space-mono 
-                    text-[15px]`}
+                    text-[15px]
+                    text-[var(--app-font-color-primary)]`}
             />
             {!validate && message && (
-                <span className="ml-4 text-red-500 font-space-mono text-[12px]">
+                <span className="ml-4 text-[var(--app-font-color-primary)] font-space-mono text-[13px]">
                     {message}
                 </span>
             )}

@@ -7,17 +7,17 @@ type ButtonProps = {
 export default function Buttons({text, onClick, size}: ButtonProps) {
     return (
         <div>
-            <button className={`"
+            <button className={`
             cursor-pointer 
             w-${size || 'full'}
-            bg-[#000000] 
-            text-white
+            bg-[var(--app-button-color)] 
+            text-[var(--app-button-text-color)]
             font-space-mono 
             text-[15px] 
             py-2
             px-4
             rounded-xl
-            hover:bg-gray-700"`}
+            hover:bg-[color:var(--app-button-hover-color)]`}
             onClick={onClick}>
                 {text}
             </button>

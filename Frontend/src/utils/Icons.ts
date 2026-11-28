@@ -13,6 +13,8 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import StarIcon from '@mui/icons-material/Star';
 import CommentIcon from '@mui/icons-material/Comment';
+import SearchIcon from '@mui/icons-material/Search';
+import TuneIcon from '@mui/icons-material/Tune';
 
 export {
     MenuIcon,
@@ -29,5 +31,7 @@ export {
     FileUploadIcon,
     ArrowForwardIosIcon,
     StarIcon,
-    CommentIcon
+    CommentIcon,
+    SearchIcon,
+    TuneIcon
 };

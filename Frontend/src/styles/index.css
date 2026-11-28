@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-space-mono: "Space Mono", sans-serif;
+}
+
+:root{
+  --app-background-color: #f8f9fa;
+  --app-background-elements-color: #f8f9fa;
+  --app-border-color: #6c757d;
+
+  --app-icon-color: #1a1d1f;
+  --app-icon-hover-color: #ced4da;
+  --app-icon-selected-color: #dee2e6;
+
+  --app-icon-list-color: #f8f9fa;
+  --app-icon-listo-background: #1a1d1f;
+
+  --app-input-color: #adb5bd;
+  --app-input-rejected-color: #da1e37;
+
+  --app-button-color: #1a1d1f;
+  --app-button-hover-color: #464a4d;
+  --app-button-text-color: #ffffff;
+
+  --app-link-color: #1c6bd9;
+  --app-font-color-primary: #000000;
+  --app-font-color-placeholder: #6c6c6c;
+
+  --app-font-size-first: 20px;
+  --app-font-size-second: 18px;
+  --app-font-size-third: 15px;
+  --app-font-size-fourth: 13px;
+
+}
+
+
+
+/* ["#f8f9fa","#e9ecef","#dee2e6","#ced4da","#adb5bd","#6c757d","#495057","#343a40","#212529"] */
